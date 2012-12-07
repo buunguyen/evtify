@@ -47,4 +47,9 @@ Remove a specific handler of specific events:
 obj.off('evt1 evt2', handler); 
 ```
 
+Aliases:
+* `on`: `addEventListener`
+* `off`: `removeEventListener`
+* `trigger`: `fire`
+
 That's it!  If not, check out the [specs](https://github.com/buunguyen/eventify/blob/master/test/eventify.specs.js).
