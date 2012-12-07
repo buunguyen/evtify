@@ -5,8 +5,8 @@ Add event capability for JavaScript objects.
 
 First, setup: 
 ```javascript
-var obj1 = {}, obj2 = {};
-Eventify(obj1, obj2, ...);
+var obj = {}, anotherObj = {};
+Eventify(obj, anotherObj, ...);
 ...
 ```
 Or:
@@ -19,17 +19,17 @@ var obj = new Person();
 
 Register handler for one or more events with optional context:
 ```javascript
-obj.on('evt1 evt2', function() {
+obj.on('evt1 evt2', function(eventName, params...) {
 		// 'this' will be 'window'
 	})
-   	.on('evt3', function() { 
+   	.on('evt3', function(eventName, params...) { 
    		// 'this' will be context obj
    	}, context);
 ```
 
 Trigger one or more events:
 ```javascript
-obj.trigger('evt1 evt2 evt3');
+obj.trigger('evt1 evt2 evt3', args...);
 ```
 
 Remove all handlers of all events:
