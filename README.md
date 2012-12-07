@@ -5,8 +5,8 @@ Add event capability for JavaScript objects.
 
 First, setup: 
 ```javascript
-var obj = {};
-Eventify(obj);
+var obj1 = {}, obj2 = {};
+Eventify(obj1, obj2, ...);
 ...
 ```
 Or:
