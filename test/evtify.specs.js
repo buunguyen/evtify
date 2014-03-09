@@ -1,10 +1,10 @@
-describe('eventify', function() {  
+describe('evtify', function() {  
     it('adds methods to plain objects directly', function() {
         var obj1 = {}, 
             obj2 = {},
             methods = ['on', 'addEventListener', 'off', 'removeEventListener', 'trigger', 'fire'];
-
-        Eventify(obj1, obj2);
+        console.log (evtify)
+        evtify(obj1, obj2);
         for (var i = 0; i < methods.length; i++) {
             expect(obj1[methods[i]]).toBeDefined();
             expect(obj2[methods[i]]).toBeDefined();
@@ -16,7 +16,7 @@ describe('eventify', function() {
             methods = ['on', 'addEventListener', 'off', 'removeEventListener', 'trigger', 'fire'],
             obj;
 
-        ctor.prototype = new Eventify();
+        ctor.prototype = new evtify();
         obj = new ctor();
 
         for (var i = 0; i < methods.length; i++) {
@@ -25,7 +25,7 @@ describe('eventify', function() {
     });
 
     it('triggers registered events with context', function() {
-        var obj = Eventify({})[0],
+        var obj = evtify({})[0],
             context = {},
             handler = {
                 handle: function(event, number) {
@@ -40,13 +40,13 @@ describe('eventify', function() {
     });
 
     it('triggers registered events without context', function() {
-        Eventify({})[0].on('event1', function(event, number) {
+        evtify({})[0].on('event1', function(event, number) {
             expect(this).toBe(window);
         }).trigger('event1');
     });
 
     it('triggers multiple handlers', function() {
-        var obj = Eventify({})[0],
+        var obj = evtify({})[0],
             handler = { handle: function() {} }, 
             spy = spyOn(handler, 'handle');
 
@@ -57,7 +57,7 @@ describe('eventify', function() {
     });
 
     it('removes all handlers of all events', function() {
-        var obj = Eventify({})[0],
+        var obj = evtify({})[0],
             handler = { handle: function() {}},
             spy = spyOn(handler, 'handle');
 
@@ -69,7 +69,7 @@ describe('eventify', function() {
     });
 
     it('removes all handlers of a specific event', function() {
-        var obj = Eventify({})[0],
+        var obj = evtify({})[0],
             handler = { handle: function() {}},
             spy = spyOn(handler, 'handle');
 
@@ -87,7 +87,7 @@ describe('eventify', function() {
     });
 
     it('removes a specific handler', function() {
-        var obj = Eventify({})[0],
+        var obj = evtify({})[0],
             handler = { handle: function() {}},
             spy = spyOn(handler, 'handle');
 

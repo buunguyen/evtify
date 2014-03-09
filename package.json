@@ -1,0 +1,19 @@
+{
+  "name": "evtify",
+  "main": "evtify",
+  "version": "0.1.0",
+  "description": "Event emitter for Node and browsers",
+  "keywords": [
+    "events"
+  ],
+  "homepage": "http://buunguyen.github.io/evtify",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:buunguyen/evtify.git"
+  },  
+  "license": "MIT",
+  "author": {
+    "name": "Buu Nguyen",
+    "email": "buunguyen@gmail.com"
+  }
+}

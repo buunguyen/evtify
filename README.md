@@ -1,18 +1,21 @@
-eventify
+evtify
 ====
 
-Add event capability for JavaScript objects.
+Eventify any object, Node and browsers.
+```
+npm install evtify
+```
 
-First, setup: 
+Setup: 
 ```javascript
 var obj = {}, anotherObj = {};
-Eventify(obj, anotherObj, ...);
+evtify(obj, anotherObj, ...);
 ...
 ```
 Or:
 ```javascript
 function Person() {};
-Person.prototype = new Eventify();
+Person.prototype = new evtify();
 var obj = new Person();
 ...
 ```
@@ -23,7 +26,7 @@ obj.on('evt1 evt2', function(eventName, params...) {
 		// 'this' will be 'window'
 	})
    	.on('evt3', function(eventName, params...) { 
-   		// 'this' will be context obj
+   		// 'this' will be 'context'
    	}, context);
 ```
 
@@ -32,12 +35,12 @@ Trigger one or more events:
 obj.trigger('evt1 evt2 evt3', args...);
 ```
 
-Remove all handlers of all events:
+Remove all handlers:
 ```javascript
 obj.off(); 
 ```
 
-Remove all handlers of specific events:
+Remove handlers of specific events:
 ```javascript
 obj.off('evt1 evt2'); 
 ```
@@ -52,4 +55,4 @@ Aliases:
 * `off`: `removeEventListener`
 * `trigger`: `fire`
 
-That's it!  If not, check out the [specs](https://github.com/buunguyen/eventify/blob/master/test/eventify.specs.js).
+That's it!  Check out the [specs](https://github.com/buunguyen/evtify/blob/master/test/evtify.specs.js) for more details.
