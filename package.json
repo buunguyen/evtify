@@ -1,6 +1,5 @@
 {
   "name": "evtify",
-  "main": "evtify",
   "version": "0.1.0",
   "description": "Event emitter for Node and browsers",
   "keywords": [
